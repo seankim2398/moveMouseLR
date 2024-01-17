@@ -6,7 +6,13 @@ from pynput.keyboard import Key, Listener
 # Get screen size
 width, height = pyautogui.size()
 
-modifier = 5
+if (width >= 3840) and (height >= 2160):
+    modifier = 5
+elif (width >= 2560) and (height >= 1440):
+    modifier = 4.5
+else:
+    modifier = 4
+
 speed = modifier * 30
 
 is_running = False
